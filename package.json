@@ -2,6 +2,7 @@
   "name": "react-pwa",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kevindantas.github.io/react-pwa",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
