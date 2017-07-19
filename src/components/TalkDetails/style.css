@@ -1,0 +1,88 @@
+.TalkDetails header {
+  padding: 12px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.TalkDetails header .row {
+  width: 100%;
+}
+
+.TalkDetails h1 {
+  font-weight: 100;
+  text-align: left;
+  font-size: 32px;
+}
+
+.TalkDetails .location {
+  padding: 12px 24px;
+  display: flex;
+  margin-top: 42px;
+}
+
+.TalkDetails .location h3 {
+  font-size: 26px;
+  margin: 0;
+}
+
+.TalkDetails .location p {
+  margin: 0;
+}
+
+.TalkDetails .date-infos {
+  background: #00D8FF;
+  display: flex;
+  justify-content: space-between;
+  margin: -12px;
+  padding: 18px;
+}
+
+.TalkDetails .date-infos div {
+  display: flex;
+  font-weight: 100;
+  font-size: 20px;
+  padding: 0 12px;
+}
+
+.TalkDetails .date-infos div > div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+
+.TalkDetails .date-infos h3 {
+  font-weight: 100;
+  font-size: 36px;
+}
+
+.TalkDetails .date-infos h3 small {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.TalkDetails .date-infos small {
+  text-transform: uppercase;
+}
+
+
+.TalkDetails .date-infos h3 {
+  margin: 0;
+}
+
+.TalkDetails .numbers {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.TalkDetails .numbers .num {
+  margin-bottom: 0;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.TalkDetails .numbers small {
+  font-size: 18px;
+}
