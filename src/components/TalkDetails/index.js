@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import NotificationButton from '../NotificationButton';
 import { BackIcon, DateIcon, TimeIcon, LocationIcon } from '../../icons';
 import './style.css';
 
@@ -47,6 +48,8 @@ export default class TalkDetails extends Component {
               <p> Fidêncio Ramos, 308, 10º andar</p>
             </div>
           </div>
+
+          <NotificationButton label="Receber notificação" />
 
           <div className="numbers">
             <div className="going">

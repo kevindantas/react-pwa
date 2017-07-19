@@ -1,0 +1,10 @@
+.NotificationButton {
+    width: 100%;
+    border: none;
+    background: #00D8FF;
+    padding: 18px 32px;
+    border-radius: 1000px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: auto;
+}
