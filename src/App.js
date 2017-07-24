@@ -1,13 +1,25 @@
+/* eslint import/no-webpack-loader-syntax: off */
+ 
 import React, { Component } from 'react';
 import {
   BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom'
+import Bundle from './Bundle'
 import TalkList from './components/TalkList'
-import TalkDetails from './components/TalkDetails'
+import loadTalkDetails from 'bundle-loader?lazy!./components/TalkDetails'
 
 import './App.css';
+
+const TalkDetails = (props) => (
+  <Bundle load={loadTalkDetails}>
+    {(Comp) => (
+      <Comp />
+    )}
+  </Bundle>
+);
+
 
 class App extends Component {
   render() {
