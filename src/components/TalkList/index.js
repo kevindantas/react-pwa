@@ -1,21 +1,30 @@
 import React, { Component } from 'react'
 import TalkListItem from '../TalkListItem'
+import LoadingCircular from '../LoadingCircular'
 import logo from '../../logo.svg';
 
 export default class TalkList extends Component {
   state = {
-    talks: [], 
+    talks: [],
+    loading: false,
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    this.setState((state) => ({ loading: true }));
+
     fetch('http://private-9fea0e-reactpwa.apiary-mock.com/talks')
       .then(response => response.json())
       .then((response) => {
-        this.setState({
-          talks: response
-        });
+        this.setState((state) => ({
+          talks: response,
+          loading: false,
+        }));
       })
       .catch((e, res) => console.log('error: ',e))
+  }
+
+  renderLoading() {
+    return this.state.loading ? <LoadingCircular /> : null;
   }
 
   renderTalks() {
@@ -33,6 +42,7 @@ export default class TalkList extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </div>
         <ul>
+          { this.renderLoading() }
           { this.renderTalks() }
         </ul>
       </div>
