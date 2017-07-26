@@ -15,7 +15,7 @@ import './App.css';
 const TalkDetails = (props) => (
   <Bundle load={loadTalkDetails}>
     {(Comp) => (
-      <Comp />
+      <Comp {...props} />
     )}
   </Bundle>
 );
