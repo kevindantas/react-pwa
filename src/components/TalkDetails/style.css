@@ -86,3 +86,61 @@
 .TalkDetails .numbers small {
   font-size: 18px;
 }
+
+.TalkDetails .description {
+  white-space: pre-wrap;
+  margin-top: 16px;
+}
+
+.TalkDetails .description:empty {
+  min-height: 90px;
+  position: relative;
+}
+
+
+@keyframes loadingGradient {
+  0% { background-position: 0vw }
+  100% { background-position: 100vw }
+}
+
+/**
+ * Don't bug the animation on high resolutions,
+ * Since the max-width is 540px we need to set the background-position to 540px
+ * If we still using 100vw the animation will be too fast
+ */
+@media screen and (min-width: 540px) {
+  @keyframes loadingGradient {
+    0% { background-position: 0vw }
+    100% { background-position: 540px }
+  }
+}
+
+.TalkDetails .description:empty::before,
+.TalkDetails .description:empty::after {
+  content: '';
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(to right, #dcdcdc, #ededed, #dcdcdc);
+  position: absolute;
+  animation: loadingGradient 0.5s linear infinite;
+}
+
+.TalkDetails .description:empty::before {
+  top: 0;
+}
+
+
+.TalkDetails .description:empty::after {
+  position: absolute;
+  top: 30px;
+}
+
+
+.TalkDetails.is-loading .date-infos,
+.TalkDetails.is-loading .numbers {
+  color: transparent;
+}
+
+.TalkDetails.is-loading .num::before {
+  content: '...'
+}
